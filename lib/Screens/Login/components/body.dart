@@ -7,6 +7,7 @@ import 'package:flutter_auth/components/forgot_password.dart';
 import 'package:flutter_auth/components/rounded_button.dart';
 import 'package:flutter_auth/components/rounded_input_field.dart';
 import 'package:flutter_auth/components/rounded_password_field.dart';
+import 'package:flutter_auth/navigationBar/bottom_navigation.dart';
 import 'package:flutter_svg/svg.dart';
 
 class Body extends StatelessWidget {
@@ -42,7 +43,16 @@ class Body extends StatelessWidget {
             ),
             RoundedButton(
               text: "LOGIN",
-              press: () {},
+              press: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return MainPage();
+                    },
+                  ),
+                );
+              },
             ),
             SizedBox(height: size.height * 0.03),
             AlreadyHaveAnAccountCheck(
