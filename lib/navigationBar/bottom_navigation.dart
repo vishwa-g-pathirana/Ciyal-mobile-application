@@ -2,6 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/application/home.dart';
+import 'package:flutter_auth/application/search.dart';
 
 import 'model.dart';
 
@@ -19,7 +20,9 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
+
         children: <Widget>[
+
           bottomIcons == BottomIcons.Home
               ? home()
 
@@ -33,12 +36,7 @@ class _MainPageState extends State<MainPage> {
           )
               : Container(),
           bottomIcons == BottomIcons.Search
-              ? Center(
-            child: Text(
-              "Hi, this is search page",
-              style: TextStyle(fontSize: 18),
-            ),
-          )
+              ? searchPage()
               : Container(),
           bottomIcons == BottomIcons.Account
               ? Center(

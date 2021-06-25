@@ -25,12 +25,14 @@ class _BottomBarState extends State<BottomBar> {
         child: widget.bottomIcons == true
             ? Container(
           decoration: BoxDecoration(
+
             color: kPrimaryLightColor.withOpacity(0.6),
             borderRadius: BorderRadius.circular(30),
           ),
           padding:
-          EdgeInsets.only(left: 16, right: 16, top: 8, bottom: 8),
+          EdgeInsets.only(left: 16, right: 16, top: 8, bottom: 0),
           child: Row(
+
             children: <Widget>[
               Icon(
                 widget.icons,
