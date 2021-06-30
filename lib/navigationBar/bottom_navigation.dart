@@ -19,7 +19,9 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       body: Stack(
+
 
         children: <Widget>[
 
@@ -49,7 +51,8 @@ class _MainPageState extends State<MainPage> {
           Align(
             alignment: Alignment.bottomLeft,
             child: Container(
-              padding: EdgeInsets.only(left: 24, right: 24, bottom: 30),
+              color: Color.fromRGBO(244, 243, 243, 1),
+              padding: EdgeInsets.only(left: 24, right: 24, bottom: 10, top: 10),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[

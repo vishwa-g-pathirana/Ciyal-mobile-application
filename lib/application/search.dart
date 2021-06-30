@@ -14,6 +14,7 @@ class searchPage extends StatelessWidget {
     var size = MediaQuery.of(context)
         .size; //this gonna give us total height and with of our device
     return Scaffold(
+      backgroundColor: Color.fromRGBO(244, 243, 243, 1),
 
       body: Stack(
         children: <Widget>[

@@ -21,10 +21,13 @@ class _BottomBarState extends State<BottomBar> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+
         onTap: widget.onPressed,
         child: widget.bottomIcons == true
             ? Container(
-          decoration: BoxDecoration(
+
+            decoration: BoxDecoration(
+
 
             color: kPrimaryLightColor.withOpacity(0.6),
             borderRadius: BorderRadius.circular(30),
@@ -51,6 +54,8 @@ class _BottomBarState extends State<BottomBar> {
             ],
           ),
         )
-            : Icon(widget.icons));
+            : Icon(widget.icons
+
+        ));
   }
 }
