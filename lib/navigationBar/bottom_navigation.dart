@@ -1,6 +1,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_auth/application/account_page.dart';
 import 'package:flutter_auth/application/home.dart';
 import 'package:flutter_auth/application/search.dart';
 
@@ -41,12 +42,7 @@ class _MainPageState extends State<MainPage> {
               ? searchPage()
               : Container(),
           bottomIcons == BottomIcons.Account
-              ? Center(
-            child: Text(
-              "Hi, this is account page",
-              style: TextStyle(fontSize: 18),
-            ),
-          )
+              ? AccountUI()
               : Container(),
           Align(
             alignment: Alignment.bottomLeft,
