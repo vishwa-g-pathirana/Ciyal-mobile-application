@@ -109,7 +109,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
               SizedBox(
                 height: 35,
               ),
-              buildTextField("Full Name", "Saman Kumara", false),
+              buildTextField("Full Name", "Saman Kumara", false ),
               buildTextField("E-mail", "samankumara@gmail.com", false),
               buildTextField("Password", "********", true),
               buildTextField("Address line 1", "No 337/5", false),
@@ -159,12 +159,20 @@ class _EditProfilePageState extends State<EditProfilePage> {
       String labelText, String placeholder, bool isPasswordTextField) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 35.0),
+
       child: TextField(
+
+
+
+
+
         obscureText: isPasswordTextField ? showPassword : false,
+
         decoration: InputDecoration(
 
             suffixIcon: isPasswordTextField
                 ? IconButton(
+
               onPressed: () {
                 setState(() {
                   showPassword = !showPassword;

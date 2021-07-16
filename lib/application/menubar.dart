@@ -2,6 +2,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_auth/application/settings_page.dart';
 
 import '../constants.dart';
 
@@ -74,7 +75,16 @@ Divider(),
                 color: kPrimaryColor,
               ),
             ),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return settings();
+                  },
+                ),
+              );
+            },
           ),
 
           ListTile(
