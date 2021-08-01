@@ -15,7 +15,6 @@ class searchPage extends StatelessWidget {
         .size; //this gonna give us total height and with of our device
     return Scaffold(
       backgroundColor: Color.fromRGBO(244, 243, 243, 1),
-
       body: Stack(
         children: <Widget>[
           Container(
@@ -23,29 +22,23 @@ class searchPage extends StatelessWidget {
             height: size.height * .45,
             decoration: BoxDecoration(
               color: kPrimaryColor,
-
             ),
           ),
           SafeArea(
             child: Padding(
-              padding: const EdgeInsets.only(left: 20,right: 20,top: 30),
+              padding: const EdgeInsets.only(left: 20, right: 20, top: 30),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Align(
                     alignment: Alignment.topRight,
-
                   ),
                   Text(
                     "Search Everything \nFrom Here",
                     style: TextStyle(
                       color: kPrimaryLightColor,
                       fontSize: 40,
-
                     ),
-
-
-
                   ),
                   SearchBar(),
                   //example catogarie cards

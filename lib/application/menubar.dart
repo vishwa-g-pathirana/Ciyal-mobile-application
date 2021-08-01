@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/application/settings_page.dart';
@@ -15,39 +13,35 @@ class menubar extends StatelessWidget {
       child: ListView(
         children: [
           UserAccountsDrawerHeader(
-              accountName: Text('User Name'),
-              accountEmail: Text('usermail@gmail.com'),
-              currentAccountPicture: CircleAvatar(
-
-                child: ClipOval(
-
-                  child: Image.asset("assets/images/pp.jpg",
-                    color: kPrimaryLightColor,
+            accountName: Text('User Name'),
+            accountEmail: Text('usermail@gmail.com'),
+            currentAccountPicture: CircleAvatar(
+              child: ClipOval(
+                child: Image.asset(
+                  "assets/images/pp.jpg",
+                  color: kPrimaryLightColor,
                   fit: BoxFit.cover,
                   width: 90,
                   height: 90,
-                  ),
                 ),
               ),
+            ),
             decoration: BoxDecoration(
               color: kPrimaryColor,
-
-              image: DecorationImage(
-                fit: BoxFit.fill,
-                image: NetworkImage('')
-              ),
-
-
+              image: DecorationImage(fit: BoxFit.fill, image: NetworkImage('')),
             ),
           ),
-Divider(),
+          Divider(),
           ListTile(
-            leading: Icon(Icons.notifications_none_outlined,
-              color: kPrimaryColor,),
-            title: Text('Notifications',
-                    style: TextStyle(
-                      color: kPrimaryColor,
-                    ),
+            leading: Icon(
+              Icons.notifications_none_outlined,
+              color: kPrimaryColor,
+            ),
+            title: Text(
+              'Notifications',
+              style: TextStyle(
+                color: kPrimaryColor,
+              ),
             ),
             onTap: () {},
             trailing: ClipOval(
@@ -57,20 +51,22 @@ Divider(),
                 height: 20,
                 child: Center(
                   child: Text('8',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 12,
-                  )),//notification count
-
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 12,
+                      )), //notification count
                 ),
               ),
             ),
           ),
           Divider(),
           ListTile(
-            leading: Icon(Icons.settings_outlined,
-              color: kPrimaryColor,),
-            title: Text('Settings',
+            leading: Icon(
+              Icons.settings_outlined,
+              color: kPrimaryColor,
+            ),
+            title: Text(
+              'Settings',
               style: TextStyle(
                 color: kPrimaryColor,
               ),
@@ -86,11 +82,13 @@ Divider(),
               );
             },
           ),
-
           ListTile(
-            leading: Icon(Icons.payment_outlined,
-              color: kPrimaryColor,),
-            title: Text('Payment method',
+            leading: Icon(
+              Icons.payment_outlined,
+              color: kPrimaryColor,
+            ),
+            title: Text(
+              'Payment method',
               style: TextStyle(
                 color: kPrimaryColor,
               ),
@@ -99,31 +97,38 @@ Divider(),
           ),
           Divider(),
           ListTile(
-            leading: Icon(Icons.phone,
-              color: kPrimaryColor,),
-            title: Text('Contact Us',
+            leading: Icon(
+              Icons.phone,
+              color: kPrimaryColor,
+            ),
+            title: Text(
+              'Contact Us',
               style: TextStyle(
                 color: kPrimaryColor,
               ),
             ),
             onTap: () {},
           ),
-
           ListTile(
-            leading: Icon(Icons.star_border_outlined,
-              color: kPrimaryColor,),
-            title: Text('Rate Us',
+            leading: Icon(
+              Icons.star_border_outlined,
+              color: kPrimaryColor,
+            ),
+            title: Text(
+              'Rate Us',
               style: TextStyle(
                 color: kPrimaryColor,
               ),
             ),
             onTap: () {},
           ),
-
           ListTile(
-            leading: Icon(Icons.share_outlined,
-              color: kPrimaryColor,),
-            title: Text('Share',
+            leading: Icon(
+              Icons.share_outlined,
+              color: kPrimaryColor,
+            ),
+            title: Text(
+              'Share',
               style: TextStyle(
                 color: kPrimaryColor,
               ),
@@ -132,23 +137,19 @@ Divider(),
           ),
           Divider(),
           ListTile(
-            leading: Icon(Icons.power_settings_new_outlined,
-              color: kPrimaryColor,),
-            title: Text('Log out',
+            leading: Icon(
+              Icons.power_settings_new_outlined,
+              color: kPrimaryColor,
+            ),
+            title: Text(
+              'Log out',
               style: TextStyle(
                 color: kPrimaryColor,
               ),
             ),
             onTap: () {},
           ),
-
-
-
-
-
-
         ],
-
       ),
     );
   }

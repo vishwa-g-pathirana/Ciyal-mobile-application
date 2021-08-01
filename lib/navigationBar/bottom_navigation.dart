@@ -1,12 +1,11 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/application/account_page.dart';
+import 'package:flutter_auth/application/cart.dart';
 import 'package:flutter_auth/application/home.dart';
 import 'package:flutter_auth/application/search.dart';
 
 import 'model.dart';
-
 
 class MainPage extends StatefulWidget {
   @override
@@ -20,35 +19,18 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body: Stack(
-
-
         children: <Widget>[
-
-          bottomIcons == BottomIcons.Home
-              ? home()
-
-              : Container(),
-          bottomIcons == BottomIcons.Cart
-              ? Center(
-            child: Text(
-              "Hi, this is cart page",
-              style: TextStyle(fontSize: 18),
-            ),
-          )
-              : Container(),
-          bottomIcons == BottomIcons.Search
-              ? searchPage()
-              : Container(),
-          bottomIcons == BottomIcons.Account
-              ? AccountUI()
-              : Container(),
+          bottomIcons == BottomIcons.Home ? home() : Container(),
+          bottomIcons == BottomIcons.Cart ? CartPage() : Container(),
+          bottomIcons == BottomIcons.Search ? searchPage() : Container(),
+          bottomIcons == BottomIcons.Account ? AccountUI() : Container(),
           Align(
             alignment: Alignment.bottomLeft,
             child: Container(
               color: Color.fromRGBO(244, 243, 243, 1),
-              padding: EdgeInsets.only(left: 24, right: 24, bottom: 10, top: 10),
+              padding:
+                  EdgeInsets.only(left: 24, right: 24, bottom: 10, top: 10),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
@@ -59,7 +41,7 @@ class _MainPageState extends State<MainPage> {
                         });
                       },
                       bottomIcons:
-                      bottomIcons == BottomIcons.Home ? true : false,
+                          bottomIcons == BottomIcons.Home ? true : false,
                       icons: Icons.home_outlined,
                       text: "Home"),
                   BottomBar(
@@ -69,7 +51,7 @@ class _MainPageState extends State<MainPage> {
                         });
                       },
                       bottomIcons:
-                      bottomIcons == BottomIcons.Cart ? true : false,
+                          bottomIcons == BottomIcons.Cart ? true : false,
                       icons: Icons.shopping_cart_outlined,
                       text: "Cart"),
                   BottomBar(
@@ -79,7 +61,7 @@ class _MainPageState extends State<MainPage> {
                         });
                       },
                       bottomIcons:
-                      bottomIcons == BottomIcons.Search ? true : false,
+                          bottomIcons == BottomIcons.Search ? true : false,
                       icons: Icons.search,
                       text: "Search"),
                   BottomBar(
@@ -89,7 +71,7 @@ class _MainPageState extends State<MainPage> {
                         });
                       },
                       bottomIcons:
-                      bottomIcons == BottomIcons.Account ? true : false,
+                          bottomIcons == BottomIcons.Account ? true : false,
                       icons: Icons.person_outline,
                       text: "Account"),
                 ],

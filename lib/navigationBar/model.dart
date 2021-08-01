@@ -10,9 +10,9 @@ class BottomBar extends StatefulWidget {
   IconData icons;
   BottomBar(
       {@required this.onPressed,
-        @required this.bottomIcons,
-        @required this.icons,
-        @required this.text});
+      @required this.bottomIcons,
+      @required this.icons,
+      @required this.text});
   @override
   _BottomBarState createState() => _BottomBarState();
 }
@@ -21,41 +21,34 @@ class _BottomBarState extends State<BottomBar> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-
         onTap: widget.onPressed,
         child: widget.bottomIcons == true
             ? Container(
-
-            decoration: BoxDecoration(
-
-
-            color: kPrimaryLightColor.withOpacity(0.6),
-            borderRadius: BorderRadius.circular(30),
-          ),
-          padding:
-          EdgeInsets.only(left: 16, right: 16, top: 8, bottom: 0),
-          child: Row(
-
-            children: <Widget>[
-              Icon(
-                widget.icons,
-                color: kPrimaryColor,
-              ),
-              SizedBox(
-                width: 8,
-              ),
-              Text(
-                widget.text,
-                style: TextStyle(
-                    color: kPrimaryColor,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 15),
-              ),
-            ],
-          ),
-        )
-            : Icon(widget.icons
-
-        ));
+                decoration: BoxDecoration(
+                  color: kPrimaryLightColor.withOpacity(0.6),
+                  borderRadius: BorderRadius.circular(30),
+                ),
+                padding:
+                    EdgeInsets.only(left: 16, right: 16, top: 8, bottom: 0),
+                child: Row(
+                  children: <Widget>[
+                    Icon(
+                      widget.icons,
+                      color: kPrimaryColor,
+                    ),
+                    SizedBox(
+                      width: 8,
+                    ),
+                    Text(
+                      widget.text,
+                      style: TextStyle(
+                          color: kPrimaryColor,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 15),
+                    ),
+                  ],
+                ),
+              )
+            : Icon(widget.icons));
   }
 }

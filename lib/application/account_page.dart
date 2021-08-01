@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import '../constants.dart';
 import 'My_shop.dart';
 
-
 class AccountUI extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -56,7 +55,6 @@ class _EditProfilePageState extends State<EditProfilePage> {
           },
           child: ListView(
             children: [
-
               SizedBox(
                 height: 15,
               ),
@@ -109,11 +107,12 @@ class _EditProfilePageState extends State<EditProfilePage> {
               SizedBox(
                 height: 35,
               ),
-              buildTextField("Full Name", "Saman Kumara", false ),
+              buildTextField("Full Name", "Saman Kumara", false),
               buildTextField("E-mail", "samankumara@gmail.com", false),
               buildTextField("Password", "********", true),
               buildTextField("Address line 1", "No 337/5", false),
-              buildTextField("Address line 2", "Makubura,Homagama,Colombo,Sri Lanka", false),
+              buildTextField("Address line 2",
+                  "Makubura,Homagama,Colombo,Sri Lanka", false),
               SizedBox(
                 height: 35,
               ),
@@ -159,32 +158,23 @@ class _EditProfilePageState extends State<EditProfilePage> {
       String labelText, String placeholder, bool isPasswordTextField) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 35.0),
-
       child: TextField(
-
-
-
-
-
         obscureText: isPasswordTextField ? showPassword : false,
-
         decoration: InputDecoration(
-
             suffixIcon: isPasswordTextField
                 ? IconButton(
-
-              onPressed: () {
-                setState(() {
-                  showPassword = !showPassword;
-                });
-              },
-              icon: Icon(
-                Icons.remove_red_eye,
-                color: Colors.grey,
-              ),
-            )
+                    onPressed: () {
+                      setState(() {
+                        showPassword = !showPassword;
+                      });
+                    },
+                    icon: Icon(
+                      Icons.remove_red_eye,
+                      color: Colors.grey,
+                    ),
+                  )
                 : null,
-            contentPadding: EdgeInsets.only(bottom: 3 , left: 5),
+            contentPadding: EdgeInsets.only(bottom: 3, left: 5),
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(30),
               borderSide: BorderSide(
@@ -195,18 +185,15 @@ class _EditProfilePageState extends State<EditProfilePage> {
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(30),
               borderSide: BorderSide(
-                  color: kPrimaryColor,
-                  width: 2.0,
+                color: kPrimaryColor,
+                width: 2.0,
               ),
             ),
             labelText: labelText,
             floatingLabelBehavior: FloatingLabelBehavior.always,
             hintText: placeholder,
-
             hintStyle: TextStyle(
-
               fontSize: 16,
-
               color: Colors.black,
             )),
       ),

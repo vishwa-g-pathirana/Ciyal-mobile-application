@@ -5,6 +5,7 @@ import 'package:flutter_auth/navigationBar/bottom_navigation.dart';
 import '../constants.dart';
 import 'Purchased_history.dart';
 import 'home.dart';
+
 class settings extends StatefulWidget {
   const settings({Key key}) : super(key: key);
 
@@ -36,13 +37,11 @@ class _settingsState extends State<settings> {
             );
           },
         ),
-
       ),
       body: Container(
         padding: EdgeInsets.only(left: 16, top: 25, right: 16),
         child: ListView(
           children: [
-
             SizedBox(
               height: 40,
             ),
@@ -72,11 +71,9 @@ class _settingsState extends State<settings> {
             buildAccountOptionRow(context, "Change E-mail"),
             buildAccountOptionRow(context, "Verify Account"),
             buildAccountOptionRow(context, "Deactivate account"),
-
             SizedBox(
               height: 40,
             ),
-
             Row(
               children: [
                 Icon(
@@ -99,47 +96,42 @@ class _settingsState extends State<settings> {
             SizedBox(
               height: 10,
             ),
-           GestureDetector(
-             onTap: () {
-               Navigator.push(
-                 context,
-                 MaterialPageRoute(
-                   builder: (context) {
-                     return purchasedHistory();
-                   },
-                 ),
-               );
-             },
-            child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 8.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "Purchase History",
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.grey[600],
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return purchasedHistory();
+                    },
+                  ),
+                );
+              },
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Purchase History",
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.grey[600],
+                      ),
                     ),
-                  ),
-                  Icon(
-                    Icons.arrow_forward_ios,
-                    color: Colors.grey,
-                  ),
-                ],
+                    Icon(
+                      Icons.arrow_forward_ios,
+                      color: Colors.grey,
+                    ),
+                  ],
+                ),
               ),
             ),
-    ),
             buildAccountOptionRow(context, "Sell History"),
-
-
             SizedBox(
               height: 40,
             ),
-
-
-
             Row(
               children: [
                 Icon(
@@ -151,7 +143,9 @@ class _settingsState extends State<settings> {
                 ),
                 Text(
                   "Account",
-                  style: TextStyle(fontSize: 18,),
+                  style: TextStyle(
+                    fontSize: 18,
+                  ),
                 ),
               ],
             ),
@@ -168,7 +162,6 @@ class _settingsState extends State<settings> {
             SizedBox(
               height: 50,
             ),
-
           ],
         ),
       ),
@@ -247,4 +240,3 @@ class _settingsState extends State<settings> {
     );
   }
 }
-
