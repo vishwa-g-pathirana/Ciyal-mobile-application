@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_auth/application/account_menu.dart';
 import 'package:flutter_auth/application/account_page.dart';
 import 'package:flutter_auth/application/cart.dart';
 import 'package:flutter_auth/application/home.dart';
@@ -24,7 +25,7 @@ class _MainPageState extends State<MainPage> {
           bottomIcons == BottomIcons.Home ? home() : Container(),
           bottomIcons == BottomIcons.Cart ? CartPage() : Container(),
           bottomIcons == BottomIcons.Search ? searchPage() : Container(),
-          bottomIcons == BottomIcons.Account ? AccountUI() : Container(),
+          bottomIcons == BottomIcons.Account ? tiles() : Container(),
           Align(
             alignment: Alignment.bottomLeft,
             child: Container(
