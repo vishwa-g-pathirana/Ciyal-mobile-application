@@ -1,7 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/application/cart.dart';
+import 'package:flutter_auth/application/example_profile.dart';
 import 'package:flutter_auth/application/home.dart';
+import 'package:flutter_auth/application/settings.dart';
+import 'package:flutter_auth/application/shop.dart';
 
 import '../constants.dart';
 
@@ -38,38 +41,51 @@ class _tilesState extends State<tiles> {
       body: Container(
         child: Column(
           children: [
-            Container(
-              child: Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Row(
-                  children: [
-                    CircleAvatar(
-                      backgroundImage: AssetImage('assets/images/icon (2).png'),
-                      radius: 30,
-                      backgroundColor: kShadowColor,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 20),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Samadhi Kaushalya',
-                            style: TextStyle(
-                              fontFamily: 'Roboto',
-                              fontSize: 20,
-                            ),
-                          ),
-                          Text(
-                            'View Profile',
-                            style: TextStyle(
-                              color: kShadowColor,
-                            ),
-                          ),
-                        ],
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return expprofille();
+                    },
+                  ),
+                );
+              },
+              child: Container(
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Row(
+                    children: [
+                      CircleAvatar(
+                        backgroundImage:
+                            AssetImage('assets/images/icon (2).png'),
+                        radius: 30,
+                        backgroundColor: kShadowColor,
                       ),
-                    ),
-                  ],
+                      Padding(
+                        padding: const EdgeInsets.only(left: 20),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Samadhi Kaushalya',
+                              style: TextStyle(
+                                fontFamily: 'Roboto',
+                                fontSize: 20,
+                              ),
+                            ),
+                            Text(
+                              'View Profile',
+                              style: TextStyle(
+                                color: kShadowColor,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -88,22 +104,25 @@ class _tilesState extends State<tiles> {
                   crossAxisSpacing: 2,
                   crossAxisCount: 2,
                   children: <Widget>[
-                    tile('Shop', '1 new notification',
+                    //order =>
+                    //on tap function , button name , notification , button icon
+                    tile(shop(), 'Shop', '1 new notification',
                         'assets/images/icon (3).png'),
-                    tile('Settings', '', 'assets/images/icon (1).png'),
-                    tile('Market', 'new items availabele',
+                    tile(example(), 'Settings', '',
+                        'assets/images/icon (1).png'),
+                    tile('', 'Market', 'new items availabele',
                         'assets/images/icon (6).png'),
-                    tile('Money transfer', 'rs 50 available',
+                    tile('', 'Money transfer', 'rs 50 available',
                         'assets/images/icon (5).png'),
-                    tile('market', '', 'assets/images/icon (4).png'),
-                    tile(
-                        'Topic', 'Notifications', 'assets/images/icon (4).png'),
-                    tile(
-                        'Topic', 'Notifications', 'assets/images/icon (4).png'),
-                    tile(
-                        'Topic', 'Notifications', 'assets/images/icon (4).png'),
-                    tile(
-                        'Topic', 'Notifications', 'assets/images/icon (4).png'),
+                    tile('', 'market', '', 'assets/images/icon (4).png'),
+                    tile('', 'Topic', 'Notifications',
+                        'assets/images/icon (4).png'),
+                    tile('', 'Topic', 'Notifications',
+                        'assets/images/icon (4).png'),
+                    tile('', 'Topic', 'Notifications',
+                        'assets/images/icon (4).png'),
+                    tile('', 'Topic', 'Notifications',
+                        'assets/images/icon (4).png'),
                   ],
                 ),
               ),
@@ -114,10 +133,19 @@ class _tilesState extends State<tiles> {
     );
   }
 
-  Widget tile(topic, notification, icon) {
+  Widget tile(clickEvent, topic, notification, icon) {
     return Container(
       child: GestureDetector(
-        onTap: () {},
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) {
+                return clickEvent;
+              },
+            ),
+          );
+        },
         child: Card(
           clipBehavior: Clip.antiAliasWithSaveLayer,
           semanticContainer: true,
