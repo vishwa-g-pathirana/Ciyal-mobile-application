@@ -101,6 +101,7 @@ class _tilesState extends State<tiles> {
                 child: GridView.count(
                   scrollDirection: Axis.vertical,
                   mainAxisSpacing: 7,
+                  childAspectRatio: 1.5 / 1,
                   crossAxisSpacing: 2,
                   crossAxisCount: 2,
                   children: <Widget>[

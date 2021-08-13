@@ -11,205 +11,234 @@ class CartPage extends StatefulWidget {
 
 class _CartPageState extends State<CartPage> {
   @override
+  var qnt = 1;
+  var bprice;
+
+  bool pressAttention = false;
+  bool pressAttention2 = true;
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: kBackgroundColor,
       appBar: AppBar(
         backgroundColor: Colors.white,
+        elevation: 0,
+        leading: IconButton(
+          icon: Icon(
+            Icons.arrow_back_outlined,
+            color: kPrimaryColor,
+          ),
+        ),
+        title: Text(
+          'Cart',
+          style: TextStyle(
+            color: kPrimaryColor,
+          ),
+        ),
         actions: [
           IconButton(
-            icon: Icon(
-              Icons.more_vert,
-              color: kPrimaryColor,
-            ),
             onPressed: () {},
-          ),
+            icon: Icon(Icons.more_vert),
+            color: kPrimaryColor,
+          )
         ],
       ),
-      body: SafeArea(),
+      body: SafeArea(
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(left: 5, top: 5),
+              child: Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 5),
+                    child: Container(
+                      child: new RaisedButton(
+                        child: new Text('Previous Orders'),
+                        textColor:
+                            pressAttention2 ? Colors.black : Colors.white,
+                        shape: new RoundedRectangleBorder(
+                            borderRadius: new BorderRadius.circular(30),
+                            side: BorderSide(color: kPrimaryColor)),
+                        color: pressAttention ? kPrimaryColor : Colors.white,
+                        onPressed: () {
+                          if (pressAttention2 = true) {
+                            setState(() {
+                              pressAttention2 = false;
+                              pressAttention = true;
+                            });
+                          } else {
+                            setState(() {
+                              pressAttention = true;
+                            });
+                          }
+                        },
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 5),
+                    child: Container(
+                      child: new RaisedButton(
+                        child: new Text('New Cart'),
+                        textColor:
+                            pressAttention2 ? Colors.white : Colors.black,
+                        shape: new RoundedRectangleBorder(
+                            borderRadius: new BorderRadius.circular(30),
+                            side: BorderSide(color: kPrimaryColor)),
+                        color: pressAttention2 ? kPrimaryColor : Colors.white,
+                        onPressed: () {
+                          if (pressAttention = true) {
+                            setState(() {
+                              pressAttention = false;
+                              pressAttention2 = true;
+                            });
+                          } else {
+                            setState(() {
+                              pressAttention2 = true;
+                            });
+                          }
+                        },
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+            Column(
+              children: [
+                Container(
+                  height: 300,
+                  child: ListView(
+                    scrollDirection: Axis.vertical,
+                    children: [
+                      newcart(),
+                    ],
+                  ),
+                )
+              ],
+            )
+          ],
+        ),
+      ),
     );
   }
 
-  Widget SafeArea() {
-    return ListView(
-      scrollDirection: Axis.vertical,
-      children: [
-        Column(
-            children: List.generate(cartList.length, (index) {
-          return Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
-                child: Row(
-                  children: [
-                    Container(
-                      width: 140,
-                      height: 180,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          image: DecorationImage(
-                              image: NetworkImage(cartList[index]['img']),
-                              fit: BoxFit.cover)),
+  Widget newcart() {
+    bprice = 100;
+    bprice = bprice * qnt;
+
+    return Padding(
+      padding: const EdgeInsets.only(top: 10, bottom: 10, right: 5, left: 5),
+      child: Card(
+        elevation: 7,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        color: Colors.grey[200],
+        child: Row(
+          children: [
+            Container(
+              height: 200,
+              width: 200,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Colors.yellow,
+                  image: DecorationImage(
+                    image: AssetImage('assets/images/home (1).jpg'),
+                    fit: BoxFit.cover,
+                  )),
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(5),
+                  child: Text(
+                    'Burger',
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
                     ),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          cartList[index]['name'],
-                          style: TextStyle(fontSize: 22),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text(
-                          "ref " + cartList[index]['ref'],
-                          style: TextStyle(
-                              fontSize: 13,
-                              color: kOrangeColor.withOpacity(0.7)),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text(
-                          cartList[index]['size'],
-                          style: TextStyle(
-                            fontSize: 22,
-                          ),
-                        ),
-                        SizedBox(
-                          height: 40,
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 10),
+                  child: Text(
+                    'Burger King',
+                    style: TextStyle(fontSize: 20, color: Colors.grey[600]),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 5, top: 5, bottom: 5),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      IconButton(
+                        onPressed: () {
+                          setState(() {
+                            if (qnt > 0) {
+                              qnt = qnt - 1;
+                            } else {
+                              setState(() {
+                                qnt = 0;
+                              });
+                            }
+                          });
+                        },
+                        icon: Icon(Icons.add_circle_outline),
+                        color: Colors.red[700],
+                      ),
+                      Text(
+                        '$qnt',
+                        style: TextStyle(fontSize: 20),
+                      ),
+                      IconButton(
+                        onPressed: () {
+                          setState(() {
+                            qnt = qnt + 1;
+                          });
+                        },
+                        icon: Icon(Icons.add_circle_outline),
+                        color: Colors.red[700],
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 10),
+                  child: Text('RS $bprice'),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 30, left: 5),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Icon(
+                        Icons.star,
+                        color: Colors.yellow[900],
+                        size: 15,
+                      ),
+                      Text(
+                        '(x4)',
+                        style: TextStyle(color: Colors.yellow[900]),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 120),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
-                            Text(cartList[index]['price'],
-                                style: TextStyle(
-                                  fontSize: 22,
-                                )),
-                            SizedBox(
-                              width: 20,
-                            ),
-                            Row(
-                              children: [
-                                Container(
-                                  width: 25,
-                                  height: 25,
-                                  decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      border: Border.all(
-                                          color: kBlackColor.withOpacity(0.5))),
-                                  child: Center(
-                                    child: Icon(
-                                      Icons.minimize_outlined,
-                                      size: 10,
-                                      color: kBlackColor.withOpacity(0.5),
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(
-                                  width: 10,
-                                ),
-                                Text(
-                                  "1",
-                                  style: TextStyle(fontSize: 15),
-                                ),
-                                SizedBox(
-                                  width: 10,
-                                ),
-                                Container(
-                                  width: 25,
-                                  height: 25,
-                                  decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      border: Border.all(
-                                          color: kBlackColor.withOpacity(0.5))),
-                                  child: Center(
-                                    child: Icon(
-                                      Icons.add,
-                                      size: 10,
-                                      color: kBlackColor.withOpacity(0.5),
-                                    ),
-                                  ),
-                                ),
-                              ],
+                            Icon(
+                              Icons.delete_forever_outlined,
+                              color: Colors.red,
                             )
                           ],
-                        )
-                      ],
-                    )
-                  ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-            ],
-          );
-        })),
-        Divider(
-          color: kShadowColor.withOpacity(0.8),
-        ),
-        SizedBox(
-          height: 10,
-        ),
-        Padding(
-          padding: const EdgeInsets.only(left: 30, right: 30),
-          child: Text(
-            "Do you have a promotion code?",
-            style: TextStyle(fontSize: 16),
-          ),
-        ),
-        SizedBox(
-          height: 15,
-        ),
-        Divider(
-          color: kShadowColor.withOpacity(0.8),
-        ),
-        SizedBox(
-          height: 15,
-        ),
-        Padding(
-          padding: const EdgeInsets.only(left: 30, right: 30),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                "Delivery",
-                style: TextStyle(fontSize: 16),
-              ),
-              Text(
-                "Standard - Free",
-                style: TextStyle(fontSize: 16),
-              )
-            ],
-          ),
-        ),
-        SizedBox(
-          height: 30,
-        ),
-        Container(
-          child: Padding(
-            padding: const EdgeInsets.only(left: 20, right: 20, bottom: 70),
-            child: Container(
-              height: 50,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                  color: kPrimaryColor,
-                  borderRadius: BorderRadius.circular(50 / 2)),
-              child: Center(
-                child: Text(
-                  "Buy for \RS 50".toUpperCase(),
-                  style: TextStyle(
-                      color: kBackgroundColor, fontWeight: FontWeight.bold),
-                ),
-              ),
+              ],
             ),
-          ),
-        )
-      ],
+          ],
+        ),
+      ),
     );
   }
 }

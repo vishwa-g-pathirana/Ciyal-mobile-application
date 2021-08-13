@@ -141,7 +141,8 @@ class home extends StatelessWidget {
                       child: Padding(
                         padding: const EdgeInsets.only(bottom: 70),
                         child: ListView(
-                          scrollDirection: Axis.vertical,
+                          physics: const ClampingScrollPhysics(),
+                          shrinkWrap: false,
                           children: <Widget>[
                             productCard('assets/images/home (1).jpg'),
                             productCard('assets/images/home (5).jpg'),

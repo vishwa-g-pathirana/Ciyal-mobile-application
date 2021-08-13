@@ -4,6 +4,7 @@ import 'package:flutter_auth/application/account_menu.dart';
 import 'package:flutter_auth/application/account_page.dart';
 import 'package:flutter_auth/application/cart.dart';
 import 'package:flutter_auth/application/home.dart';
+import 'package:flutter_auth/application/home_page.dart';
 import 'package:flutter_auth/application/search.dart';
 
 import 'model.dart';
@@ -22,7 +23,7 @@ class _MainPageState extends State<MainPage> {
     return Scaffold(
       body: Stack(
         children: <Widget>[
-          bottomIcons == BottomIcons.Home ? home() : Container(),
+          bottomIcons == BottomIcons.Home ? homePage() : Container(),
           bottomIcons == BottomIcons.Cart ? CartPage() : Container(),
           bottomIcons == BottomIcons.Search ? searchPage() : Container(),
           bottomIcons == BottomIcons.Account ? tiles() : Container(),
