@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_auth/application/account_menu.dart';
 import 'package:flutter_auth/application/account_page.dart';
 import 'package:flutter_auth/application/cart.dart';
-import 'package:flutter_auth/application/home.dart';
+
 import 'package:flutter_auth/application/home_page.dart';
 import 'package:flutter_auth/application/search.dart';
 

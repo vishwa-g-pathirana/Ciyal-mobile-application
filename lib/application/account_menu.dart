@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/application/cart.dart';
 import 'package:flutter_auth/application/example_profile.dart';
-import 'package:flutter_auth/application/home.dart';
+
 import 'package:flutter_auth/application/settings.dart';
 import 'package:flutter_auth/application/shop.dart';
 

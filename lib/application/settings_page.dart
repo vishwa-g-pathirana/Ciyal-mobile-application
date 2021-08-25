@@ -4,7 +4,7 @@ import 'package:flutter_auth/navigationBar/bottom_navigation.dart';
 
 import '../constants.dart';
 import 'Purchased_history.dart';
-import 'home.dart';
+
 
 class settings extends StatefulWidget {
   const settings({Key key}) : super(key: key);

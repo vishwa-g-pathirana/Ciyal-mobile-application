@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_auth/application/home.dart';
+
 import 'package:flutter_auth/application/menubar.dart';
 
 import '../constants.dart';
+var scaffoldkey = GlobalKey<ScaffoldState>();
 
 class homePage extends StatefulWidget {
   const homePage({Key key}) : super(key: key);
