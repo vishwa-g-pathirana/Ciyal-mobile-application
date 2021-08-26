@@ -6,7 +6,9 @@ const kShadowColor = Color(0xFF808080);
 const kBackgroundColor = Color(0xFFFFFFFF);
 const kBlackColor = Color(0xFF000000);
 const kOrangeColor = Color(0xFFFF7F50);
-
+const kgrey = Color(0xFF5E5E5E);
+const orange = Color(0xFFFF5135);
+const green = Color(0xFF118704);
 const List cartList = [
   {
     "img":

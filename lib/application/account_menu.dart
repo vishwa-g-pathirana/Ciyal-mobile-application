@@ -7,6 +7,8 @@ import 'package:flutter_auth/application/settings.dart';
 import 'package:flutter_auth/application/shop.dart';
 
 import '../constants.dart';
+import 'pending_appoinments.dart';
+import 'pending_orers.dart';
 
 class tiles extends StatefulWidget {
   const tiles({Key key}) : super(key: key);
@@ -113,9 +115,9 @@ class _tilesState extends State<tiles> {
                         'assets/images/icon (1).png'),
                     tile('', 'Market', 'new items availabele',
                         'assets/images/icon (6).png'),
-                    tile('', 'Money transfer', 'rs 50 available',
+                    tile(pending_u(), 'Pending orders', '5 pending orders',
                         'assets/images/icon (5).png'),
-                    tile('', 'market', '', 'assets/images/icon (4).png'),
+                    tile(pending_a(), 'Pending Appoinments', '5 pending appoinments', 'assets/images/icon (4).png'),
                     tile('', 'Topic', 'Notifications',
                         'assets/images/icon (4).png'),
                     tile('', 'Topic', 'Notifications',
